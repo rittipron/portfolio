@@ -1,0 +1,15 @@
+.dark-theme {
+  background-color: #1f2937;
+  color: #e0e0e0;
+  --link-color: #bb86fc;
+  --button-background: #3700b3;
+  --button-text: #ffffff;
+}
+
+.light-theme {
+  background-color: #ffffff;
+  color: #000000;
+  --link-color: #1a73e8;
+  --button-background: #6200ea;
+  --button-text: #ffffff;
+}
