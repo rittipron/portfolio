@@ -30,5 +30,47 @@ const backend = [
                     Swagger.`,
     link: "https://github.com/rittipron/product-api-laravel",
   },
-
+  {
+    img: "springboots.png",
+    name: "Spring Boot + RabbitMQ Example",
+    description: `JRabbitMQ Example with Spring Boot 3 and Java 21. 
+      This project Example to use RabbitMQ for messaging in a Spring Boot application. 
+      It includes a simple producer and consumer setup.`,
+    link: "https://github.com/rittipron/spring-boot-rabbit-mq",
+  },{
+    img: "springboots.png",
+    name: "Spring Boot + Call Api Example",
+    description: `Example Call Api with Spring Boot 3 and Java 21. This project`,
+    link: "https://github.com/rittipron/spring-boot-all-rest-api",
+  },
+  {
+    img: "springboots.png",
+    name: "Spring Boot + Call Api Example",
+    description: `Example Call Api with Spring Boot 3 and Java 21. This project`,
+    link: "https://github.com/rittipron/spring-boot-all-rest-api",
+  },
+  {
+    img: "springboots.png",
+    name: "Spring Boot + Redis Example",
+    description: `Example Redis with Spring Boot 3 and Java 21. This project`,
+    link: "https://github.com/rittipron/spring-boot-redis-api",
+  },
+  {
+    img: "springboots.png",
+    name: "Spring Boot + REST API Send Gmail Oauth2 Mailer Example",
+    description: `Example REST API Send Gmail Oauth2 Mailer with Spring Boot 3 and Java 21. This project`,
+    link: "https://github.com/rittipron/springboot-gmail-oauth2-mailer",
+  },
+  {
+    img: "springboots.png",
+    name: "Spring Boot + Kafka and Scheduler Example",
+    description: `Example Kafka and Scheduler with Spring Boot 3 and Java 21. This project`,
+    link: "https://github.com/rittipron/springboot-kafka-scheduler",
+  },
+  {
+    img: "springboots.png",
+    name: "Spring Boot + LOGIN JWT TOKEN Example",
+    description: `Example LOGIN JWT TOKEN with Spring Boot 3 and Java 21. This project`,
+    link: "https://github.com/rittipron/jwt-spring-boot",
+  },
 ];
