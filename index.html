@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/icon/logo.png" />
     <title>Rittiporn Apisutiporn - Portfolio</title>
     <link rel="icon" href="./favicon.ico" />
     <link rel="stylesheet" href="style.css?v=2" />
@@ -16,19 +17,27 @@
 
   <body>
     <div class="">
-      <header class="absolute inset-x-0 top-0 z-50">
+      <header class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur shadow">
         <nav
-          class="flex items-center justify-end p-6 lg:px-8"
+          class="flex justify-between items-center p-6 lg:px-8"
           aria-label="Global"
         >
-          <div class="flex lg:flex-1">
-            <button onclick="toggleTheme()">เปลี่ยนธีม</button>
+          <div class="flex space-x-6 text-sm font-medium">
+            <a href="#home" class="hover:text-indigo-600 transition text-[#000]">Home</a>
+            <a href="#tech" class="hover:text-indigo-600 transition text-[#000]"
+              >Tech Stack</a
+            >
+            <a href="#back" class="hover:text-indigo-600 transition text-[#000]">Backend</a>
+            <a href="#front" class="hover:text-indigo-600 transition text-[#000]"
+              >Frontend</a
+            >
           </div>
+          <button onclick="toggleTheme()" class="text-2xl" title="Toggle Theme"><span id="theme-icon">🌙</span></button>
         </nav>
       </header>
 
       <!-- Frist Page -->
-      <section>
+      <section id="home">
         <div class="relative isolate px-6 lg:px-8">
           <div
             class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -59,24 +68,30 @@
             ></div>
           </div>
           <div
-            class="grid grid-cols-2 mx-auto max-w-2xl py-56 sm:py-48 lg:py-34"
+            class="grid md:grid-cols-2 sm:grid-cols-1 mx-auto max-w-7xl py-20 md:py-56 sm:py-34 lg:py-34"
           >
+            <div class="mx-auto my-auto">
+              <img
+                class="mt-10 h-48 w-48 rounded-full object-cover mb-[5rem]"
+                src="https://avatars.githubusercontent.com/u/83214698?v=4"
+                alt="Rittiporn Apisutiporn"
+              />
+            </div>
             <div class="">
               <h1
                 class="text-5xl font-semibold tracking-tight text-balance sm:text-7xl"
               >
                 Portfolio
               </h1>
-              <p
-                class="mt-8 text-lg font-medium text-pretty sm:text-xl/8"
-              >
+              <p class="mt-8 text-lg font-medium text-pretty sm:text-xl/8">
                 I have over 5 years of work experience in my field. During this
                 time, I have learned valuable skills and worked with many kinds
                 of people. I enjoy learning new things and always try to improve
                 myself. I believe that continuous learning helps me grow, stay
                 motivated, and do my best at work.
               </p>
-              <div class="mt-10 flex items-center justify-center gap-x-6">
+              
+              <div class="mt-10 md:flex gap-x-6">
                 <a
                   href="./pdf/resume_rittiporn_apisutiporn.pdf"
                   download="resume_rittiporn_apisutiporn.pdf"
@@ -87,19 +102,14 @@
                 <a
                   href="https://github.com/rittipron?tab=repositories"
                   target="_blank"
-                  class="text-sm/6 font-semibold"
+                  class="text-sm/6 font-semibold px-3.5 py-2.5"
                   >Go To GitHub <span aria-hidden="true">→</span></a
                 >
               </div>
-            </div>
-            <div class="mx-auto my-auto">
-              <img
-                class="mt-10 h-48 w-48 rounded-full object-cover"
-                src="https://avatars.githubusercontent.com/u/100626658?v=4"
-                alt="Rittiporn Apisutiporn"
-              />
+              <section id="tech"></section>
             </div>
           </div>
+          
           <div
             class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
             aria-hidden="true"
@@ -145,13 +155,14 @@
               id="techstack"
               class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-6"
             ></div>
+            <section id="back"></section>
           </div>
         </div>
       </section>
 
       <!-- GitHub Backend -->
       <section>
-        <div class="pb-24 sm:pb-32">
+        <div class="pb-24 sm:pb-32 mt-10">
           <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-2xl lg:mx-0">
               <h2
@@ -164,6 +175,7 @@
               id="backend"
               class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
             ></div>
+            <section id="front"></section>
           </div>
         </div>
       </section>
@@ -193,25 +205,40 @@
   <script src="data/frontend.js?v=2"></script>
   <script src="app.js?v=7"></script>
   <script>
-  function toggleTheme() {
-    const html = document.documentElement;
-    const isDark = html.classList.contains('dark-theme');
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById("theme-icon");
+      const isDark = html.classList.contains("dark-theme");
 
-    if (isDark) {
-      html.classList.remove('dark-theme');
-      localStorage.setItem('theme', 'light');
-    } else {
-      html.classList.add('dark-theme');
-      localStorage.setItem('theme', 'dark');
+      if (isDark) {
+        html.classList.remove("dark-theme");
+        localStorage.setItem("theme", "light");
+        icon.textContent = "🌙";
+      } else {
+        html.classList.add("dark-theme");
+        localStorage.setItem("theme", "dark");
+        icon.textContent = "☀️";
+      }
     }
-  }
 
-  // โหลดธีมจาก localStorage ทันทีเมื่อเปิดหน้า
-  document.addEventListener('DOMContentLoaded', () => {
-    const saved = localStorage.getItem('theme');
-    if (saved === 'dark-theme') {
-      document.documentElement.classList.add('dark-theme');
-    }
-  });
-</script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem("theme");
+      if (saved === "dark") {
+        document.documentElement.classList.add("dark-theme");
+        icon.textContent = "☀️";
+      } else {
+        icon.textContent = "🌙";
+      }
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    });
+  </script>
 </html>
